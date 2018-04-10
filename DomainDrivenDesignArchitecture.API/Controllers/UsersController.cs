@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using DomainDrivenDesignArchitecture.Domain;
+using DomainDrivenDesignArchitecture.Domain.CommandModel;
 using DomainDrivenDesignArchitecture.Domain.ReturnModel;
 using DomainDrivenDesignArchitecture.Interface.Service;
 using System;
@@ -57,7 +58,7 @@ namespace DomainDrivenDesignArchitecture.API.Controllers
         }
 
         [HttpPut]
-        public IHttpActionResult Update(User user)
+        public IHttpActionResult Update(SaveUserCommand user)
         {
             try
             {
@@ -67,7 +68,8 @@ namespace DomainDrivenDesignArchitecture.API.Controllers
                 }
                 else
                 {
-                    serviceUser.Update(user);
+                    var map = Mapper.Map<SaveUserCommand, User>(user);
+                    serviceUser.Update(map);
                     return Ok();
                 }
             }
@@ -78,7 +80,7 @@ namespace DomainDrivenDesignArchitecture.API.Controllers
         }
 
         [HttpPost]
-        public IHttpActionResult Create(User user)
+        public IHttpActionResult Create(SaveUserCommand user)
         {
             try
             {
@@ -88,7 +90,8 @@ namespace DomainDrivenDesignArchitecture.API.Controllers
                 }
                 else
                 {
-                    serviceUser.Create(user);
+                    var map = Mapper.Map<SaveUserCommand, User>(user);
+                    serviceUser.Create(map);
                     return Ok();
                 }
             }
