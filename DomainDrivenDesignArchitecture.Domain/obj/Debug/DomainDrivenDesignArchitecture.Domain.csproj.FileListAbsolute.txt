@@ -11,3 +11,11 @@ C:\Users\aloche\Documents\Projetos\DomainDrivenDesign\DomainDrivenDesign\DomainD
 C:\Users\aloche\Documents\Projetos\DomainDrivenDesign\DomainDrivenDesign\DomainDrivenDesignArchitecture.Domain\obj\Debug\DomainDrivenDesignArchitecture.Domain.pdb
 C:\Users\aloche\Documents\Projetos\DomainDrivenDesign\DomainDrivenDesign\DomainDrivenDesignArchitecture.Domain\bin\Debug\AutoMapper.dll
 C:\Users\aloche\Documents\Projetos\DomainDrivenDesign\DomainDrivenDesign\DomainDrivenDesignArchitecture.Domain\bin\Debug\AutoMapper.xml
+C:\Users\aloche\Documents\Projetos\BaseProject\DomainDrivenDesignArchitecture.Domain\bin\Debug\DomainDrivenDesignArchitecture.Domain.dll
+C:\Users\aloche\Documents\Projetos\BaseProject\DomainDrivenDesignArchitecture.Domain\bin\Debug\DomainDrivenDesignArchitecture.Domain.pdb
+C:\Users\aloche\Documents\Projetos\BaseProject\DomainDrivenDesignArchitecture.Domain\bin\Debug\AutoMapper.dll
+C:\Users\aloche\Documents\Projetos\BaseProject\DomainDrivenDesignArchitecture.Domain\bin\Debug\AutoMapper.xml
+C:\Users\aloche\Documents\Projetos\BaseProject\DomainDrivenDesignArchitecture.Domain\obj\Debug\DomainDrivenDesignArchitecture.Domain.csprojResolveAssemblyReference.cache
+C:\Users\aloche\Documents\Projetos\BaseProject\DomainDrivenDesignArchitecture.Domain\obj\Debug\DomainDrivenDesignArchitecture.Domain.csproj.CoreCompileInputs.cache
+C:\Users\aloche\Documents\Projetos\BaseProject\DomainDrivenDesignArchitecture.Domain\obj\Debug\DomainDrivenDesignArchitecture.Domain.dll
+C:\Users\aloche\Documents\Projetos\BaseProject\DomainDrivenDesignArchitecture.Domain\obj\Debug\DomainDrivenDesignArchitecture.Domain.pdb
