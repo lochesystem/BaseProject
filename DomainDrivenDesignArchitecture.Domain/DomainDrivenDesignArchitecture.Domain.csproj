@@ -49,6 +49,7 @@
     <Compile Include="Base\DomainUndeletableBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReturnModel\BaseReturn.cs" />
+    <Compile Include="ReturnModel\TokenReturn.cs" />
     <Compile Include="ReturnModel\UserReturn.cs" />
     <Compile Include="User.cs" />
   </ItemGroup>

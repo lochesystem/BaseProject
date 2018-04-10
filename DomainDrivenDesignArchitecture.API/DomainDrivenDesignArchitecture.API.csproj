@@ -169,6 +169,8 @@
     <Compile Include="AutoMapper\AutoMapperConfig.cs" />
     <Compile Include="AutoMapper\ServiceModelToViewModelMapping.cs" />
     <Compile Include="AutoMapper\ViewModelToServiceModelMapping.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\BasicTokenController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Filters\APIMainFilter.cs" />
     <Compile Include="Global.asax.cs">

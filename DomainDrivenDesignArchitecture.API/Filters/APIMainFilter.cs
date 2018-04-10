@@ -1,10 +1,9 @@
-﻿using Newtonsoft.Json;
+﻿using DomainDrivenDesignArchitecture.Domain.ReturnModel;
+using DomainDrivenDesignArchitecture.Infra.Helpers;
+using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
 using System.Net.Http;
-using System.Web;
 using System.Web.Http;
 using System.Web.Http.Controllers;
 using System.Web.Http.Filters;
@@ -32,19 +31,17 @@ namespace DomainDrivenDesignArchitecture.API.Filters
                     if (!token.StartsWith("Bearer"))
                     {
                         token = token.Replace("Basic ", string.Empty);
-                        //var tokenObj = JsonConvert.DeserializeObject<LoginReturnModel>(EncryptString.Decrypt(token));
+                        var tokenObj = JsonConvert.DeserializeObject<TokenReturn>(EncryptHelper.Decrypt(token));
 
-                        //TODO: ajustar login Owin
-                        var tokenObj = "";
                         if (tokenObj != null)
                         {
-                            //if (tokenObj.UserId != null && tokenObj.UserId != Guid.Empty)
-                            //{
-                            //    if (tokenObj.Date.AddDays(1) > DateTime.Now)
-                            //    {
-                            //        notAuthorized = false;
-                            //    }
-                            //}
+                            if (tokenObj.UserId != null && tokenObj.UserId != Guid.Empty)
+                            {
+                                if (tokenObj.Date.AddDays(1) > DateTime.Now)
+                                {
+                                    notAuthorized = false;
+                                }
+                            }
                         }
                     }
                     else
