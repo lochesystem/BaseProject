@@ -12,8 +12,7 @@ namespace DomainDrivenDesignArchitecture.API.AutoMapper
 
             CreateMap<User, UserReturn>()
                 .ForMember(dest => dest.Login, to => to.MapFrom(src => src.Login))
-                .ForMember(dest => dest.Password, to => to.MapFrom(src => src.Password))
-                .ForMember(dest => dest.UserLastAccess, to => to.MapFrom(src => src.UserLastAccess));
+                .ForMember(dest => dest.Password, to => to.MapFrom(src => src.Password));
         }
 
     }

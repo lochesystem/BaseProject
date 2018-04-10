@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
+using System.Web.Http.Description;
 using System.Web.Http.OData;
 using System.Web.Http.OData.Extensions;
 using System.Web.Http.OData.Query;
@@ -80,10 +81,13 @@ namespace DomainDrivenDesignArchitecture.API.Controllers
         }
 
         [HttpPost]
+        [ResponseType(typeof(BaseReturn))]
         public IHttpActionResult Create(SaveUserCommand user)
         {
             try
             {
+                var returnModel = new BaseReturn();
+
                 if (user == null)
                 {
                     return NotFound();
@@ -91,8 +95,17 @@ namespace DomainDrivenDesignArchitecture.API.Controllers
                 else
                 {
                     var map = Mapper.Map<SaveUserCommand, User>(user);
-                    serviceUser.Create(map);
-                    return Ok();
+
+                    var valid = serviceUser.Query().Any(x => x.Login == map.Login);
+
+                    if (!valid)
+                    {
+                        serviceUser.Create(map);
+
+                        return Ok(returnModel);
+                    }
+
+                    return BadRequest("User already exists.");
                 }
             }
             catch (Exception e)
