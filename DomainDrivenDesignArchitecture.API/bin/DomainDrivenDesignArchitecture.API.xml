@@ -4,5 +4,33 @@
         <name>DomainDrivenDesignArchitecture.API</name>
     </assembly>
     <members>
+        <member name="M:DomainDrivenDesignArchitecture.API.Controllers.UsersController.Get(System.Web.Http.OData.Query.ODataQueryOptions{DomainDrivenDesignArchitecture.Domain.ReturnModel.UserReturn})">
+            <summary>
+            List User's
+            </summary>
+            <param name="options">OData Filter's</param>
+            <remarks>Return a list of Users</remarks>
+        </member>
+        <member name="M:DomainDrivenDesignArchitecture.API.Controllers.UsersController.Delete(System.Guid[])">
+            <summary>
+            Delete User's
+            </summary>
+            <param name="ids">Array of Ids</param>
+            <remarks>Return a message if success or failed</remarks>
+        </member>
+        <member name="M:DomainDrivenDesignArchitecture.API.Controllers.UsersController.Update(DomainDrivenDesignArchitecture.Domain.CommandModel.SaveUserCommand)">
+            <summary>
+            Update a User
+            </summary>
+            <param name="user">User's data</param>
+            <remarks>Return a message if success or failed</remarks>
+        </member>
+        <member name="M:DomainDrivenDesignArchitecture.API.Controllers.UsersController.Create(DomainDrivenDesignArchitecture.Domain.CommandModel.SaveUserCommand)">
+            <summary>
+            Save a User
+            </summary>
+            <param name="user">User's data</param>
+            <remarks>Return a message if success or failed</remarks>
+        </member>
     </members>
 </doc>

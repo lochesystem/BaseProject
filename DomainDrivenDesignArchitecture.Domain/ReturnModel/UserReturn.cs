@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace DomainDrivenDesignArchitecture.Domain.ReturnModel
+﻿namespace DomainDrivenDesignArchitecture.Domain.ReturnModel
 {
     public class UserReturn : BaseReturn
     {

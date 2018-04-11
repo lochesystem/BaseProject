@@ -24,6 +24,11 @@ namespace DomainDrivenDesignArchitecture.API.Controllers
             this.serviceUser = serviceUser;
         }
 
+        /// <summary>
+        /// List User's
+        /// </summary>
+        /// <param name="options">OData Filter's</param>
+        /// <remarks>Return a list of Users</remarks>
         public PageResult<UserReturn> Get(ODataQueryOptions<UserReturn> options)
         {
             var userList = Mapper.Map<List<User>, List<UserReturn>>(serviceUser.Query().ToList());
@@ -36,7 +41,14 @@ namespace DomainDrivenDesignArchitecture.API.Controllers
               Request.ODataProperties().TotalCount);
         }
 
+        /// <summary>
+        /// Delete User's
+        /// </summary>
+        /// <param name="ids">Array of Ids</param>
+        /// <remarks>Return a message if success or failed</remarks>
+        [Authorize]
         [HttpDelete]
+        [ResponseType(typeof(BaseReturn))]
         public IHttpActionResult Delete([FromUri] Guid[] ids)
         {
             try
@@ -58,7 +70,14 @@ namespace DomainDrivenDesignArchitecture.API.Controllers
             }
         }
 
+        /// <summary>
+        /// Update a User
+        /// </summary>
+        /// <param name="user">User's data</param>
+        /// <remarks>Return a message if success or failed</remarks>
+        [Authorize]
         [HttpPut]
+        [ResponseType(typeof(BaseReturn))]
         public IHttpActionResult Update(SaveUserCommand user)
         {
             try
@@ -80,6 +99,12 @@ namespace DomainDrivenDesignArchitecture.API.Controllers
             }
         }
 
+        /// <summary>
+        /// Save a User
+        /// </summary>
+        /// <param name="user">User's data</param>
+        /// <remarks>Return a message if success or failed</remarks>
+        [Authorize]
         [HttpPost]
         [ResponseType(typeof(BaseReturn))]
         public IHttpActionResult Create(SaveUserCommand user)
